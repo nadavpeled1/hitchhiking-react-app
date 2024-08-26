@@ -1,13 +1,54 @@
-import MainMenu from "./components/MainMenuList";
+import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import HowToUse from "./pages/HowToUse";
+import OfferRide from "./pages/OfferRide";
+import TakeRide from "./pages/TakeRide";
 
-function App() {
+const App: React.FC = () => {
+  // State to manage dummy rides
+  const [rides, setRides] = useState<
+    { id: number; destination: string; seats: number; passengers: number }[]
+  >([]);
+
+  // Function to add a dummy ride
+  const addDummyRide = () => {
+    const newRide = {
+      id: rides.length + 1,
+      destination: `City ${rides.length + 1}`,
+      seats: Math.floor(Math.random() * 5) + 1,
+      passengers: 0,
+    };
+    setRides([...rides, newRide]);
+  };
+
+  // Function to join a ride
+  const joinRide = (id: number) => {
+    setRides(
+      rides.map((ride) =>
+        ride.id === id && ride.passengers < ride.seats
+          ? { ...ride, passengers: ride.passengers + 1 }
+          : ride
+      )
+    );
+  };
+
   return (
-    <div>
-      <MainMenu />
+    <Router>
       <Navbar />
-    </div>
+      <Routes>
+        <Route path="/HowToUse" element={<HowToUse />} />
+        <Route
+          path="/offer-ride"
+          element={<OfferRide addDummyRide={addDummyRide} />}
+        />
+        <Route
+          path="/take-ride"
+          element={<TakeRide rides={rides} joinRide={joinRide} />}
+        />
+      </Routes>
+    </Router>
   );
-}
+};
 
-export default Navbar;
+export default App;
