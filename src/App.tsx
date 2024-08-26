@@ -1,7 +1,11 @@
-import ListGroup from "./components/ListGroup"
+import MainMenu from "./components/MainMenuList";
 
 function App() {
-  return <div><ListGroup /></div>
+  return (
+    <div>
+      <MainMenu />
+    </div>
+  );
 }
 
-export default ListGroup
+export default MainMenu;
