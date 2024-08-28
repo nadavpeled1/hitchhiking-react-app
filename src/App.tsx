@@ -8,21 +8,29 @@ import TakeRide from "./pages/TakeRide";
 const App: React.FC = () => {
   // State to manage dummy rides
   const [rides, setRides] = useState<
-    { id: number; destination: string; seats: number; passengers: number }[]
+    {
+      id: number;
+      origin: string;
+      destination: string;
+      seats: number;
+      passengers: number;
+    }[]
   >([]);
 
   // Function to add a dummy ride
   const addDummyRide = () => {
     const newRide = {
       id: rides.length + 1,
+      origin: `City ${rides.length + 1}`,
       destination: `City ${rides.length + 1}`,
-      seats: Math.floor(Math.random() * 5) + 1,
+      seats: Math.floor(Math.random() * 4) + 1, // driver + 1...4
       passengers: 0,
     };
     setRides([...rides, newRide]);
   };
 
   // Function to join a ride
+  // TODO: add a message if the ride is already full and someone try to join it.
   const joinRide = (id: number) => {
     setRides(
       rides.map((ride) =>
