@@ -45,7 +45,7 @@ const App: React.FC = () => {
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/HowToUse" element={<HowToUse />} />
+        <Route path="/how-to-use" element={<HowToUse />} />
         <Route
           path="/offer-ride"
           element={<OfferRide addDummyRide={addDummyRide} />}
