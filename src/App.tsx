@@ -21,8 +21,8 @@ const App: React.FC = () => {
   const addDummyRide = () => {
     const newRide = {
       id: rides.length + 1,
-      origin: `City ${rides.length + 1}`,
-      destination: `City ${rides.length + 1}`,
+      origin: `Origin City ${rides.length + 1}`,
+      destination: `Destiniation City ${rides.length + 1}`,
       seats: Math.floor(Math.random() * 4) + 1, // driver + 1...4
       passengers: 0,
     };

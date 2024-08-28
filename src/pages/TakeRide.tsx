@@ -1,20 +1,19 @@
 import React from "react";
 
-// Define the shape of a single ride object
+// Updated Ride interface to include 'origin'
 interface Ride {
   id: number;
+  origin: string; // New origin property
   destination: string;
   seats: number;
   passengers: number;
 }
 
-// Define props interface for TakeRide component
 interface TakeRideProps {
-  rides: Ride[]; // Array of Ride objects
-  joinRide: (id: number) => void; // Function type with a number argument
+  rides: Ride[];
+  joinRide: (id: number) => void;
 }
 
-// Use props interface in the functional component
 const TakeRide: React.FC<TakeRideProps> = ({ rides, joinRide }) => {
   return (
     <div>
@@ -22,8 +21,12 @@ const TakeRide: React.FC<TakeRideProps> = ({ rides, joinRide }) => {
       <ul>
         {rides.map((ride) => (
           <li key={ride.id}>
-            {ride.destination} - Seats: {ride.seats} - Passengers:{" "}
-            {ride.passengers}
+            <p>From: {ride.origin}</p> {/* Displaying origin */}
+            <p>To: {ride.destination}</p> {/* Displaying destination */}
+            <p>
+              Available Seats: {ride.passengers}/{ride.seats}
+            </p>{" "}
+            {/* Displaying available seats */}
             <button onClick={() => joinRide(ride.id)}>Join Ride</button>
           </li>
         ))}
