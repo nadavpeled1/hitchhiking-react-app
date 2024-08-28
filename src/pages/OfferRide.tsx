@@ -1,22 +1,22 @@
 import React, { useState } from "react";
 
 interface OfferRideProps {
-  addDummyRide: (origin: string, destination: string) => void;
+  addRide: (origin: string, destination: string) => void;
 }
 
-const OfferRide: React.FC<OfferRideProps> = ({ addDummyRide }) => {
+const OfferRide: React.FC<OfferRideProps> = ({ addRide: addRide }) => {
   // State for form inputs
   const [origin, setOrigin] = useState<string>(""); // State for origin city
   const [destination, setDestination] = useState<string>(""); // State for destination city
 
   // List of cities
-  const cities = ["Beer Sheva", "Tel Aviv", "Haifa"];
+  const cities = ["Beer Sheva", "Tel Aviv", "Haifa", "Jerusalem"];
 
   // Handle form submission
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Call the function to add a new ride with selected origin and destination
-    addDummyRide(origin, destination);
+    addRide(origin, destination);
   };
 
   return (
@@ -58,7 +58,7 @@ const OfferRide: React.FC<OfferRideProps> = ({ addDummyRide }) => {
 
         {/* Submit Button */}
         <br />
-        <button type="submit">Offer Ride</button>
+        <button type="submit">Add Ride</button>
       </form>
     </div>
   );

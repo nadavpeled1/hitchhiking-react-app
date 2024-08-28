@@ -6,7 +6,7 @@ import OfferRide from "./pages/OfferRide";
 import TakeRide from "./pages/TakeRide";
 
 const App: React.FC = () => {
-  // State to manage dummy rides
+  // State to manage rides
   const [rides, setRides] = useState<
     {
       id: number;
@@ -17,12 +17,12 @@ const App: React.FC = () => {
     }[]
   >([]);
 
-  // Function to add a dummy ride
-  const addDummyRide = () => {
+  // Function to add a ride
+  const addRide = (origin: string, destination: string) => {
     const newRide = {
       id: rides.length + 1,
-      origin: `Origin City ${rides.length + 1}`,
-      destination: `Destiniation City ${rides.length + 1}`,
+      origin: origin,
+      destination: destination,
       seats: Math.floor(Math.random() * 4) + 1, // driver + 1...4
       passengers: 0,
     };
@@ -46,10 +46,7 @@ const App: React.FC = () => {
       <Navbar />
       <Routes>
         <Route path="/how-to-use" element={<HowToUse />} />
-        <Route
-          path="/offer-ride"
-          element={<OfferRide addDummyRide={addDummyRide} />}
-        />
+        <Route path="/offer-ride" element={<OfferRide addRide={addRide} />} />
         <Route
           path="/take-ride"
           element={<TakeRide rides={rides} joinRide={joinRide} />}
