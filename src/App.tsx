@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 import HowToUse from "./pages/HowToUse";
 import OfferRide from "./pages/OfferRide";
 import TakeRide from "./pages/TakeRide";
-import Login from "./pages/login";
+import Login from "./pages/Login";
 
 const App: React.FC = () => {
   //login state managemnt:

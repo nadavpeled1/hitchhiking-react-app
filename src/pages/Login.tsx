@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const Login: React.FC = () => {
-  const [phoneNumber, setPhoneNumber] = useState("default");
+  const [phoneNumber, setPhoneNumber] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
