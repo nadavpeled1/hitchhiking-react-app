@@ -4,8 +4,12 @@ import Navbar from "./components/Navbar";
 import HowToUse from "./pages/HowToUse";
 import OfferRide from "./pages/OfferRide";
 import TakeRide from "./pages/TakeRide";
+import Login from "./pages/login";
 
 const App: React.FC = () => {
+  //login state managemnt:
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   // State to manage rides
   const [rides, setRides] = useState<
     {
@@ -46,6 +50,7 @@ const App: React.FC = () => {
       <Navbar />
       <Routes>
         <Route path="/how-to-use" element={<HowToUse />} />
+        <Route path="/Login" element={<Login />}></Route>
         <Route path="/offer-ride" element={<OfferRide addRide={addRide} />} />
         <Route
           path="/take-ride"

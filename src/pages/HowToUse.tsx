@@ -14,11 +14,6 @@ const HowToUse: React.FC = () => {
           decided to build this website to help people without a car find a way
           to reach inter-city destinations.
         </p>
-      </section>
-
-      {/* Purpose of the Website */}
-      <section>
-        <h2>Purpose of the Website</h2>
         <p>
           The main purpose of this website is to help us deal with the lack of
           reliable public transportation, especially on weekends. Additionally,
@@ -47,8 +42,8 @@ const HowToUse: React.FC = () => {
           </li>
         </ul>
         <p>
-          We hope this website helps connect people and makes traveling easier
-          and more affordable.
+          We hope this website will help connect people and make traveling
+          easier and affordable.
         </p>
       </section>
     </div>
