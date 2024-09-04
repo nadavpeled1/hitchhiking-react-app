@@ -1,0 +1,12 @@
+/* Navbar.css */
+.navbar {
+  background-color: #007bff; /* Custom primary color */
+}
+
+.nav-link {
+  color: white !important; /* Ensure the links are white */
+}
+
+.nav-link:hover {
+  color: #ffcc00 !important; /* Change color on hover */
+}
