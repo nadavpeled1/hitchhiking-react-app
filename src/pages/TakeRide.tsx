@@ -9,6 +9,7 @@ interface Ride {
   passengers: number;
   date: string;
   time: string;
+  contact: string;
 }
 
 interface TakeRideProps {
@@ -40,6 +41,8 @@ const TakeRide: React.FC<TakeRideProps> = ({ rides, joinRide }) => {
                   <br />
                   <strong>Available Seats:</strong> {ride.passengers}/
                   {ride.seats}
+                  <br />
+                  <strong>Contact:</strong> {ride.contact}
                 </Card.Text>
                 <Button variant="primary" onClick={() => joinRide(ride.id)}>
                   Join Ride
