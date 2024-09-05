@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 
 interface OfferRideProps {
-  addRide: (origin: string, destination: string, contact: string) => void;
+  addRide: (
+    origin: string,
+    destination: string,
+    contact: string,
+    date: string,
+    time: string
+  ) => void;
 }
 
 const OfferRide: React.FC<OfferRideProps> = ({ addRide: addRide }) => {
@@ -19,7 +25,7 @@ const OfferRide: React.FC<OfferRideProps> = ({ addRide: addRide }) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Call the function to add a new ride with selected origin and destination
-    addRide(origin, destination, contact);
+    addRide(origin, destination, contact, date, time);
   };
 
   return (

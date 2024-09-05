@@ -1,12 +1,14 @@
 import React from "react";
+import { Card, Button, Container, Row, Col } from "react-bootstrap";
 
-// Updated Ride interface to include 'origin'
 interface Ride {
   id: number;
-  origin: string; // New origin property
+  origin: string;
   destination: string;
   seats: number;
   passengers: number;
+  date: string;
+  time: string;
 }
 
 interface TakeRideProps {
@@ -16,22 +18,38 @@ interface TakeRideProps {
 
 const TakeRide: React.FC<TakeRideProps> = ({ rides, joinRide }) => {
   return (
-    <div>
-      <h1>Available Rides</h1>
-      <ul>
+    <Container>
+      <h1 className="my-4">Available Rides</h1>
+      <p>
+        *In the future, this page will allow a travel request to be uploaded so
+        that a potential traveler can receive alerts about trips suitable for
+        their request.
+      </p>
+      <Row>
         {rides.map((ride) => (
-          <li key={ride.id}>
-            <p>From: {ride.origin}</p> {/* Displaying origin */}
-            <p>To: {ride.destination}</p> {/* Displaying destination */}
-            <p>
-              Available Seats: {ride.passengers}/{ride.seats}
-            </p>{" "}
-            {/* Displaying available seats */}
-            <button onClick={() => joinRide(ride.id)}>Join Ride</button>
-          </li>
+          <Col key={ride.id} md={4} className="mb-4">
+            <Card>
+              <Card.Body>
+                <Card.Title>
+                  Ride from {ride.origin} to {ride.destination}
+                </Card.Title>
+                <Card.Text>
+                  <strong>Date:</strong> {ride.date}
+                  <br />
+                  <strong>Time:</strong> {ride.time}
+                  <br />
+                  <strong>Available Seats:</strong> {ride.passengers}/
+                  {ride.seats}
+                </Card.Text>
+                <Button variant="primary" onClick={() => joinRide(ride.id)}>
+                  Join Ride
+                </Button>
+              </Card.Body>
+            </Card>
+          </Col>
         ))}
-      </ul>
-    </div>
+      </Row>
+    </Container>
   );
 };
 
