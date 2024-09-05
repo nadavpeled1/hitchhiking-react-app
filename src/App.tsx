@@ -48,15 +48,19 @@ const App: React.FC = () => {
   return (
     <Router>
       <Navbar />
-      <Routes>
-        <Route path="/how-to-use" element={<HowToUse />} />
-        <Route path="/Login" element={<Login />}></Route>
-        <Route path="/offer-ride" element={<OfferRide addRide={addRide} />} />
-        <Route
-          path="/take-ride"
-          element={<TakeRide rides={rides} joinRide={joinRide} />}
-        />
-      </Routes>
+      <div style={{ paddingTop: "70px" }}>
+        {" "}
+        {/*so Nabar wont hide content */}
+        <Routes>
+          <Route path="/how-to-use" element={<HowToUse />} />
+          <Route path="/Login" element={<Login />}></Route>
+          <Route path="/offer-ride" element={<OfferRide addRide={addRide} />} />
+          <Route
+            path="/take-ride"
+            element={<TakeRide rides={rides} joinRide={joinRide} />}
+          />
+        </Routes>
+      </div>
     </Router>
   );
 };
