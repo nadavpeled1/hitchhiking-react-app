@@ -5,6 +5,8 @@ import HowToUse from "./pages/HowToUse";
 import OfferRide from "./pages/OfferRide";
 import TakeRide from "./pages/TakeRide";
 import Login from "./pages/Login";
+// Import Bootstrap's JavaScript and CSS
+import "bootstrap/dist/js/bootstrap.bundle.min.js"; // Ensure this is the right path
 
 const App: React.FC = () => {
   //login state managemnt:
