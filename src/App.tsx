@@ -5,7 +5,6 @@ import HowToUse from "./pages/HowToUse";
 import OfferRide from "./pages/OfferRide";
 import TakeRide from "./pages/TakeRide";
 import Login from "./pages/Login";
-// Import Bootstrap's JavaScript and CSS
 import "bootstrap/dist/js/bootstrap.bundle.min.js"; // Ensure this is the right path
 
 const App: React.FC = () => {
@@ -20,17 +19,29 @@ const App: React.FC = () => {
       destination: string;
       seats: number;
       passengers: number;
+      contact: string;
+      date: string;
+      time: string;
     }[]
   >([]);
 
   // Function to add a ride
-  const addRide = (origin: string, destination: string) => {
+  const addRide = (
+    origin: string,
+    destination: string,
+    contact: string,
+    date: string,
+    time: string
+  ) => {
     const newRide = {
       id: rides.length + 1,
       origin: origin,
       destination: destination,
       seats: Math.floor(Math.random() * 4) + 1, // driver + 1...4
       passengers: 0,
+      contact: contact,
+      date: date,
+      time: time,
     };
     setRides([...rides, newRide]);
   };
