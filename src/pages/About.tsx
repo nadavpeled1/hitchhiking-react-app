@@ -1,9 +1,9 @@
 import React from "react";
 
-const HowToUse: React.FC = () => {
+const About: React.FC = () => {
   return (
     <div>
-      <h1>How to Use This Website</h1>
+      <h1>About This Website</h1>
 
       {/* Introduction */}
       <section>
@@ -50,4 +50,4 @@ const HowToUse: React.FC = () => {
   );
 };
 
-export default HowToUse;
+export default About;

@@ -12,12 +12,12 @@ interface Ride {
   contact: string;
 }
 
-interface TakeRideProps {
+interface AskRideProps {
   rides: Ride[];
   joinRide: (id: number) => void;
 }
 
-const TakeRide: React.FC<TakeRideProps> = ({ rides, joinRide }) => {
+const AskRide: React.FC<AskRideProps> = ({ rides, joinRide }) => {
   return (
     <Container>
       <h1 className="my-4">Available Rides</h1>
@@ -56,4 +56,4 @@ const TakeRide: React.FC<TakeRideProps> = ({ rides, joinRide }) => {
   );
 };
 
-export default TakeRide;
+export default AskRide;

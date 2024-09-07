@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import HowToUse from "./pages/HowToUse";
+import About from "./pages/About";
 import OfferRide from "./pages/OfferRide";
-import TakeRide from "./pages/TakeRide";
+import TakeRide from "./pages/AskRide";
 import Login from "./pages/Login";
 import "bootstrap/dist/js/bootstrap.bundle.min.js"; // Ensure this is the right path
 
@@ -65,11 +65,11 @@ const App: React.FC = () => {
         {" "}
         {/*so Nabar wont hide content */}
         <Routes>
-          <Route path="/how-to-use" element={<HowToUse />} />
+          <Route path="/about" element={<About />} />
           <Route path="/Login" element={<Login />}></Route>
           <Route path="/offer-ride" element={<OfferRide addRide={addRide} />} />
           <Route
-            path="/take-ride"
+            path="/ask-ride"
             element={<TakeRide rides={rides} joinRide={joinRide} />}
           />
         </Routes>
